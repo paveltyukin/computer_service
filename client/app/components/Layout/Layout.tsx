@@ -14,7 +14,9 @@ import corporateClientIcon from '@/assets/images/icons/corporate.svg'
 import appleIcon from '@/assets/images/icons/apple.svg'
 import buildUpdateIcon from '@/assets/images/icons/build-update.svg'
 import installProgramIcon from '@/assets/images/icons/install-program.svg'
+import handWithPhone from '@/assets/images/hand-with-phone.png'
 import checkIcon from '@/assets/images/icons/check.svg'
+import { MainForm } from '../../form/Main/MainForm'
 
 export const Layout: FC = () => {
 	return (
@@ -415,8 +417,20 @@ export const Layout: FC = () => {
 				<h2 className={$class.h2}>НЕ РАБОТАЕТ КОМПЬЮТЕР?</h2>
 				<hr className={$class.hr} />
 				<div className={$class.steps}>
-					<div>sdfsdf</div>
-					<div>sdfsdfsdf</div>
+					<div className={$class.phone}>
+						<Image src={handWithPhone} height="625" width="555" />
+					</div>
+					<div />
+				</div>
+			</section>
+			<section className={$class.masterCall}>
+				<div className={$class.container}>
+					<h2 className={$class.h2}>
+						<span>НЕ РАБОТАЕТ КОМПЬЮТЕР?</span>
+					</h2>
+					<div className={$class.form}>
+						<MainForm />
+					</div>
 				</div>
 			</section>
 		</>
