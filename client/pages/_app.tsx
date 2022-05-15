@@ -1,26 +1,11 @@
 import '../styles/globals.sass'
 import type { AppProps } from 'next/app'
-import {
-	ApolloClient,
-	ApolloProvider,
-	HttpLink,
-	InMemoryCache,
-} from '@apollo/client'
-
-function createApolloClient() {
-	const link = new HttpLink({
-		uri: `${process.env.REACT_APP_GRAPHQL_API}/graphql`,
-	})
-
-	return new ApolloClient({
-		link,
-		cache: new InMemoryCache(),
-	})
-}
+import { ApolloProvider } from '@apollo/client'
+import { client } from '../app/graphql/apollo-client'
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<ApolloProvider client={createApolloClient()}>
+		<ApolloProvider client={client}>
 			<Component {...pageProps} />
 		</ApolloProvider>
 	)

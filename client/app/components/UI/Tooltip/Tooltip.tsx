@@ -3,26 +3,25 @@ import $class from './Tooltip.module.sass'
 import { gql, useQuery } from '@apollo/client'
 import TooltipItem from '@/components/UI/Tooltip/TooltipItem/TooltipItem'
 
-const GET_MY_TODOS = gql`
-	query getMyTodos {
-		todos(
-			where: { is_public: { _eq: false } }
-			order_by: { created_at: desc }
-		) {
+const SEARCH_DATA = gql`
+	query search($search: String!) {
+		search(search: $search) {
 			id
 			title
-			created_at
-			is_completed
+			description
 		}
 	}
 `
 
 interface TooltipProps {
 	type: string
+	search: string
 }
 
-export const Tooltip: FC<TooltipProps> = ({ type }) => {
-	const { loading, error, data } = useQuery(GET_MY_TODOS)
+export const Tooltip: FC<TooltipProps> = ({ type, search }) => {
+	const { loading, error, data } = useQuery(SEARCH_DATA, {
+		variables: { search },
+	})
 
 	if (loading) {
 		return <div>Loading...</div>
@@ -32,6 +31,8 @@ export const Tooltip: FC<TooltipProps> = ({ type }) => {
 		console.error(error)
 		return <div>Error!</div>
 	}
+
+	console.log(data)
 
 	return (
 		<div className={$class.tooltip}>

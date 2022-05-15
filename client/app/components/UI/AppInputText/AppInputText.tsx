@@ -9,7 +9,7 @@ import { Tooltip } from '@/components/UI/Tooltip/Tooltip'
 interface AppInputTextProps {
 	labelText?: string
 	showIcon?: boolean
-	tooltipType?: string
+	hasTooltip?: boolean
 }
 
 export function AppInputText<T extends FieldValues>(
@@ -20,7 +20,7 @@ export function AppInputText<T extends FieldValues>(
 		fieldState: { error },
 	} = useController<T>(props)
 
-	const { labelText, showIcon, tooltipType } = props
+	const { labelText, showIcon, hasTooltip } = props
 
 	return (
 		<>
@@ -34,10 +34,10 @@ export function AppInputText<T extends FieldValues>(
 				/>
 				{showIcon && (
 					<div className={$class.icon}>
-						<Image src={icon} width="21" height="25" />
+						<Image src={icon} width="21" height="25" alt="icon" />
 					</div>
 				)}
-				{tooltipType && <Tooltip type={tooltipType} />}
+				{hasTooltip && <Tooltip type={field.name} search={field.value} />}
 			</div>
 		</>
 	)
