@@ -4,8 +4,16 @@ interface TooltipItemProps {
 	data: any
 }
 
-const TooltipItem: FC<TooltipItemProps> = ({ data }) => {
-	return <div>{data.map((item: any) => item.name)}</div>
+export const TooltipItem: FC<TooltipItemProps> = ({ data }) => {
+	return (
+		<div>
+			{data.map((item: any) => {
+				return (
+					<div key={item.id}>
+						{item.title} {item.description}
+					</div>
+				)
+			})}
+		</div>
+	)
 }
-
-export default TooltipItem

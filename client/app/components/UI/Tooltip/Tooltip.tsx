@@ -1,26 +1,41 @@
 import { FC } from 'react'
 import $class from './Tooltip.module.sass'
 import { gql, useQuery } from '@apollo/client'
-import TooltipItem from '@/components/UI/Tooltip/TooltipItem/TooltipItem'
+import { TooltipItem } from '@/components/UI/Tooltip/TooltipItem/TooltipItem'
 
-const SEARCH_DATA = gql`
-	query search($search: String!) {
-		search(search: $search) {
-			id
-			title
-			description
-		}
+const getSearchQuery = (data: string) => {
+	if (data === 'manufacturer') {
+		return gql`
+			query search($search: String!) {
+				getManufacturersBySearch(search: $search) {
+					id
+					title
+					description
+				}
+			}
+		`
 	}
-`
 
-interface TooltipProps {
-	type: string
-	search: string
+	return gql`
+		query search($search: String!, $manufacturerId: Float) {
+			getDevicesBySearch(search: $search, manufacturerId: $manufacturerId) {
+				id
+				title
+				description
+			}
+		}
+	`
 }
 
-export const Tooltip: FC<TooltipProps> = ({ type, search }) => {
-	const { loading, error, data } = useQuery(SEARCH_DATA, {
-		variables: { search },
+interface TooltipProps {
+	type: 'manufacturer' | 'device'
+	search: string
+	manufacturerId?: number
+}
+
+export const Tooltip: FC<TooltipProps> = ({ type, search, manufacturerId }) => {
+	const { loading, error, data } = useQuery(getSearchQuery(type), {
+		variables: { search, manufacturerId },
 	})
 
 	if (loading) {
@@ -32,11 +47,14 @@ export const Tooltip: FC<TooltipProps> = ({ type, search }) => {
 		return <div>Error!</div>
 	}
 
-	console.log(data)
-
 	return (
 		<div className={$class.tooltip}>
-			<TooltipItem data={data} />
+			{type === 'device' && data.getDevicesBySearch && (
+				<TooltipItem data={data.getDevicesBySearch} />
+			)}
+			{type === 'manufacturer' && data.getManufacturersBySearch && (
+				<TooltipItem data={data.getManufacturersBySearch} />
+			)}
 		</div>
 	)
 }
