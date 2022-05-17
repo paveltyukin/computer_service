@@ -8,7 +8,7 @@ const PORT = process.env.PORT
 const HOST = process.env.HOST
 
 async function start() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule)
+  const app = await NestFactory.create(AppModule)
   app.enableCors(corsOptions)
   app.useGlobalPipes(new ValidationPipe())
   app.setGlobalPrefix('api')
