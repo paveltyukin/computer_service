@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
+import { AppController } from './app/app.controller'
+import { AppService } from './app/app.service'
 import { join } from 'path'
 import { ConfigModule } from '@nestjs/config'
 import { ServeStaticModule } from '@nestjs/serve-static'
-import { ManufacturerModule } from '../manufacturer/manufacturer.module'
+import { ManufacturerModule } from './manufacturer/manufacturer.module'
 import { GraphQLModule } from '@nestjs/graphql'
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
+import { DeviceModule } from './device/device.module'
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
       playground: false,
     }),
     ManufacturerModule,
+    DeviceModule,
   ],
   controllers: [AppController],
   providers: [AppService],

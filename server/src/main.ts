@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core'
-import { AppModule } from './app/app.module'
-import { corsOptions } from './utils/corsOptions'
-import { ValidationPipe } from './pipes/validation.pipe'
+import { AppModule } from './app.module'
+import { corsOptions } from './core/utils/corsOptions'
+import { ValidationPipe } from './core/pipes/validation.pipe'
 import { NestExpressApplication } from '@nestjs/platform-express'
 
 const PORT = process.env.PORT
