@@ -5,4 +5,4 @@ USER node
 WORKDIR /app
 
 EXPOSE 7002
-CMD ["yarn", "dev"]
+CMD ["yarn", "dev:full"]

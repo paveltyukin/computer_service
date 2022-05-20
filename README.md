@@ -1,3 +1,3 @@
-### docker
-`dc down && dc --env-file ./server/.env up -d --build`
-
+```bash
+docker-compose down && docker-compose up -d --build
+```
