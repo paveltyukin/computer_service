@@ -22,7 +22,7 @@ export const MainForm: FC = () => {
 			<AppInputText
 				name="manufacturer"
 				control={control}
-				labelText="Выберите производиителя"
+				labelText="Выберите производителя"
 				showIcon={true}
 				hasTooltip={true}
 			/>
