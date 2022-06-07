@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:full": "rm -rf node_modules .next && yarn && HOST='0.0.0.0' PORT=7002 next dev",
+    "dev:full": "rm -rf node_modules .next && yarn && HOST='localhost' PORT=7002 next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
