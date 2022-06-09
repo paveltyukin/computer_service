@@ -16,8 +16,13 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@/assets/*": ["app/assets/*"],
       "@/components/*": ["app/components/*"],
-      "@/assets/*": ["app/assets/*"]
+      "@/forms/*": ["app/forms/*"],
+      "@/layouts/*": ["app/layouts/*"],
+      "@/ui/*": ["app/ui/*"],
+      "@/views/*": ["app/views/*"],
+      "~/*": ["./*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

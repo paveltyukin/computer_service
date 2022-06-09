@@ -4,7 +4,7 @@ import { FieldValues, useController, UseControllerProps } from 'react-hook-form'
 import classNames from 'classnames'
 import Image from 'next/image'
 import icon from '@/assets/images/icons/input.svg'
-import { Tooltip } from '@/components/UI/Tooltip/Tooltip'
+import { Tooltip } from '../Tooltip/Tooltip'
 
 interface AppInputTextProps {
 	labelText?: string
@@ -13,7 +13,7 @@ interface AppInputTextProps {
 }
 
 export function AppInputText<T extends FieldValues>(
-	props: UseControllerProps<T> & AppInputTextProps,
+	props: UseControllerProps<T> & AppInputTextProps
 ) {
 	const {
 		field,

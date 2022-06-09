@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import $class from './Tooltip.module.sass'
 import { gql, useQuery } from '@apollo/client'
-import { TooltipItem } from '@/components/UI/Tooltip/TooltipItem/TooltipItem'
+import { TooltipItem } from './TooltipItem/TooltipItem'
 
 const getSearchQuery = (data: string) => {
 	if (data === 'manufacturer') {

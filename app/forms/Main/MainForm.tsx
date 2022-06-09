@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import { AppInputText } from '@/components/UI/AppInputText/AppInputText'
-// import { AppInputMask } from '@/components/UI/AppInputMask/AppInputMask'
-// import { AppInputTextArea } from '@/components/UI/AppInputTextArea/AppInputTextArea'
+// import { AppInputText } from '@/components/../../ui/AppInputText/AppInputText'
+// import { AppInputMask } from '@/components/ui/AppInputMask/AppInputMask'
+// import { AppInputTextArea } from '@/components/ui/AppInputTextArea/AppInputTextArea'
 import { useForm } from 'react-hook-form'
 
 interface MainFormProps {
@@ -19,20 +19,20 @@ export const MainForm: FC = () => {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-			<AppInputText
-				name="manufacturer"
-				control={control}
-				labelText="Выберите производителя"
-				showIcon={true}
-				hasTooltip={true}
-			/>
-			<AppInputText
-				name="device"
-				control={control}
-				labelText="Выберите устройство"
-				showIcon={true}
-				hasTooltip={true}
-			/>
+			{/*<AppInputText*/}
+			{/*	name="manufacturer"*/}
+			{/*	control={control}*/}
+			{/*	labelText="Выберите производителя"*/}
+			{/*	showIcon={true}*/}
+			{/*	hasTooltip={true}*/}
+			{/*/>*/}
+			{/*<AppInputText*/}
+			{/*	name="device"*/}
+			{/*	control={control}*/}
+			{/*	labelText="Выберите устройство"*/}
+			{/*	showIcon={true}*/}
+			{/*	hasTooltip={true}*/}
+			{/*/>*/}
 			{/*<AppInputText>Выберите производителя</AppInputText>*/}
 			{/*<AppInputText>Ваше имя *</AppInputText>*/}
 			{/*<AppInputMask>Ваш телефон *</AppInputMask>*/}

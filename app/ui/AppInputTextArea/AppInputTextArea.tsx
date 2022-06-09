@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import $class from '@/components/UI/AppInputTextArea/AppInputTextArea.module.sass'
+import $class from './AppInputTextArea.module.sass'
 
 interface AppInputTextAreaProps {
 	children: React.ReactNode
