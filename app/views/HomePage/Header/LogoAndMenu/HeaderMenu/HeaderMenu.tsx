@@ -2,6 +2,7 @@ import $class from './HeaderMenu.module.sass'
 import Link from 'next/link'
 
 // link => a
+
 export const HeaderMenu = () => {
 	return (
 		<div>
