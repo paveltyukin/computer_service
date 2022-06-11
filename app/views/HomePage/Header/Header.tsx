@@ -1,43 +1,21 @@
 import React from 'react'
 import $class from './Header.module.sass'
-import { HeaderMenu } from './HeaderMenu/HeaderMenu'
+import { CallToAction } from '@/views/HomePage/Header/CallToAction/CallToAction'
+import { HeaderMenu } from '@/views/HomePage/Header/LogoAndMenu/HeaderMenu/HeaderMenu'
+import logo from '@/assets/images/icons/logo.svg'
 import classNames from 'classnames'
-import { AppButton } from '@/ui/AppButton/AppButton'
 
 export const Header = () => {
 	return (
 		<header className={$class.header}>
-			<div className={$class.headerContainer}>
-				<div className={$class.headerContent}>
-					<div className={$class.headerContent__logo} />
+			<div className={classNames($class.headerWrapper, 'container')}>
+				<div className={$class.logo} />
+				<div>
+					<div className={$class.feedback}></div>
 					<HeaderMenu />
 				</div>
 			</div>
-			<div className={$class.customContainer}>
-				<div
-					className={classNames(
-						$class.containerBlock,
-						$class.manWithCompMargin
-					)}
-				>
-					<div className={$class.actions}>
-						<div className={$class.title}>
-							ОПЕРАТИВНАЯ
-							<br />
-							КОМПЬЮТЕРНАЯ
-							<br />
-							ПОМОЩЬ{' '}
-						</div>
-						<div className={$class.text}>
-							Ремонт любой сложности ПК, ноутбуков
-							<br />и техники Apple для дома и офиса
-						</div>
-						<div className={$class.offer}>Срочный выезд мастера </div>
-						<AppButton buttonClass="main">вызвать мастера</AppButton>
-					</div>
-					<div className={$class.manWithComp}></div>
-				</div>
-			</div>
+			<CallToAction />
 		</header>
 	)
 }

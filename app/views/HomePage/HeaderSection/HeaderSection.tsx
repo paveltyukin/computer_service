@@ -1,7 +1,7 @@
 import React from 'react'
 import $class from '../HomePage.module.sass'
 import classNames from 'classnames'
-import { AppButton } from '@/components/../../../ui/AppButton/AppButton'
+import { AppButton } from '@/ui/AppButton/AppButton'
 
 export const HeaderSection = () => {
 	return (
