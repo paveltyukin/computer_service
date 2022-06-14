@@ -1,0 +1,15 @@
+.navigation
+  display: flex
+
+.navigation li:nth-of-type(n+2)
+  position: relative
+  margin-left: 26px
+
+.navigation li:nth-of-type(n+2):before
+  position: absolute
+  content: ''
+  background: #E7742E
+  width: 3px
+  height: 16px
+  top: 3px
+  left: -14px
