@@ -1,5 +1,6 @@
 import $class from './Contacts.module.sass'
 import Link from 'next/link'
+import classNames from 'classnames'
 
 export const Contacts = () => {
 	return (
@@ -11,13 +12,13 @@ export const Contacts = () => {
 				<a className={$class.phone}>+7 (000) 000-00-01</a>
 			</Link>
 			<Link href="#">
-				<a className={$class.instagram} />
+				<a className={classNames($class.social, $class.instagram)} />
 			</Link>
 			<Link href="#">
-				<a className={$class.whatsapp} />
+				<a className={classNames($class.social, $class.whatsapp)} />
 			</Link>
 			<Link href="#">
-				<a className={$class.telegram} />
+				<a className={classNames($class.social, $class.telegram)} />
 			</Link>
 		</div>
 	)
