@@ -18,7 +18,7 @@ export const Menu = () => {
 				{links.map((link) => (
 					<li key={link.href}>
 						<ActiveLink href={link.href}>
-							<a>{link.name}</a>
+							<a className={$class.menuText}>{link.name}</a>
 						</ActiveLink>
 					</li>
 				))}
