@@ -13,7 +13,6 @@ export const DefaultLayout = ({
 			<Head>
 				<title itemProp="headline">Компьютерная помощь</title>
 				<meta itemProp="description" name="description" />
-				<link href="/reset.scss" />
 			</Head>
 			{children}
 		</>
