@@ -3,8 +3,7 @@ import $class from './AppInputText.module.sass'
 import { FieldValues, useController, UseControllerProps } from 'react-hook-form'
 import classNames from 'classnames'
 import Image from 'next/image'
-import icon from '@/assets/images/icons/input.svg'
-import { Tooltip } from '../Tooltip/Tooltip'
+import rightDownImage from '@/assets/images/icons/vector.svg'
 
 interface AppInputTextProps {
 	labelText?: string
@@ -20,7 +19,7 @@ export function AppInputText<T extends FieldValues>(
 		fieldState: { error },
 	} = useController<T>(props)
 
-	const { labelText, showIcon, hasTooltip } = props
+	const { labelText, showIcon } = props
 
 	return (
 		<>
@@ -34,10 +33,15 @@ export function AppInputText<T extends FieldValues>(
 				/>
 				{showIcon && (
 					<div className={$class.icon}>
-						<Image src={icon} width="21" height="25" alt="icon" />
+						<Image
+							src={rightDownImage}
+							width="21"
+							height="25"
+							alt="icon"
+							draggable={false}
+						/>
 					</div>
 				)}
-				{hasTooltip && <Tooltip type={field.name} search={field.value} />}
 			</div>
 		</>
 	)

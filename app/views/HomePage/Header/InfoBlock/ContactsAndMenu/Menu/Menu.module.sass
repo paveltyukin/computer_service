@@ -1,13 +1,12 @@
 .navigation
   display: flex
   justify-content: space-between
-  padding-top: 25px
 
-.navigation li:nth-of-type(n+2)
+.navigation .link:nth-of-type(n+2)
   position: relative
   margin-left: 26px
 
-.navigation li:nth-of-type(n+2):before
+.navigation .link:nth-of-type(n+2):before
   position: absolute
   content: ''
   background: #E7742E
@@ -18,7 +17,6 @@
 
 .menuText
   font-family: 'Montserrat', sans-serif
-  font-style: normal
   font-weight: 600
   font-size: 16px
   line-height: 20px
@@ -26,3 +24,35 @@
   text-transform: uppercase
   color: #FFFFFF
   text-decoration: none
+
+.link
+  position: relative
+  padding-bottom: 20px
+
+.link:hover .subLink,
+.link:focus .subLink
+  display: block
+
+.subLink
+  position: absolute
+  display: none
+  bottom: 0
+  transform: translateY(100%)
+
+.subLink li
+  width: 274px
+  border-top: 1px solid #E7742E
+  background: #0B1427
+  opacity: 0.8
+
+.subLink li:last-child
+  border-bottom: 1px solid #E7742E
+
+.subLink li a
+  padding: 10px 24px 12px
+  font-weight: 500
+  font-size: 16px
+  line-height: 130%
+  color: #FFFFFF
+  text-decoration: none
+  display: block
