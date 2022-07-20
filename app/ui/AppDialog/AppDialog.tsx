@@ -1,12 +1,15 @@
 import $class from './AppDialog.module.sass'
 import { AppInputText } from '@/ui/AppInputText/AppInputText'
 import { useForm } from 'react-hook-form'
+import { useAppDispatch } from '~/store'
+import { showDialog } from '~/store/common/commonSlice'
 
 interface MainFormProps {
 	device: string
 }
 
 export const AppDialog = () => {
+	const dispatch = useAppDispatch()
 	const { control, handleSubmit } = useForm<MainFormProps>({
 		defaultValues: { device: '' },
 		mode: 'onTouched',
